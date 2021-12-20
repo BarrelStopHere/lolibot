@@ -50,7 +50,7 @@ public class HelloPlugin extends BotPlugin {
                     .text("目前没有涩图。。/r/n")
                     .text("图片发送测试：")
                     .image("https://www.baidu.com/img/flexible/logo/pc/result@2.png");
-            bot.sendPrivateMsg(event.getUserId(), msg, false);
+            bot.sendGroupMsg(event.getGroupId(), msg, false);
             return MESSAGE_IGNORE;
         }
         return MESSAGE_IGNORE; // 当存在多个plugin时，继续执行下一个plugin
