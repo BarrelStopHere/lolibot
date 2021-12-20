@@ -1,4 +1,4 @@
-package net.lz1998.pbbot.plugin;
+package com.kryang.lolibot.plugin;
 
 import net.lz1998.pbbot.bot.Bot;
 import net.lz1998.pbbot.bot.BotPlugin;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class HelloPlugin extends BotPlugin {
+public class MessagePlugin extends BotPlugin {
     @Override
     public int onPrivateMessage(@NotNull Bot bot, @NotNull OnebotEvent.PrivateMessageEvent event) {
         // 这里展示了event消息链的用法. List里面可能是 at -> text -> image -> face -> text 形式, 根据元素类型组成 List。
@@ -44,7 +44,7 @@ public class HelloPlugin extends BotPlugin {
             bot.sendGroupMsg(groupId, "hi", false);
             return MESSAGE_BLOCK; // 当存在多个plugin时，不执行下一个plugin
         }
-        if ("涩图".equals(text) || "色图".equals(text)) {
+        if (text.contains("图")) {
             Msg msg = Msg.builder()
                     .face(1)
                     .text("目前没有涩图。。/r/n")

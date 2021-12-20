@@ -1,4 +1,4 @@
-package net.lz1998.pbbot.controller;
+package com.kryang.lolibot.controller;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;

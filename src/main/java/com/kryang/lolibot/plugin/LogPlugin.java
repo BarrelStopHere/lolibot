@@ -1,4 +1,4 @@
-package net.lz1998.pbbot.plugin;
+package com.kryang.lolibot.plugin;
 
 import lombok.extern.slf4j.Slf4j;
 import net.lz1998.pbbot.bot.Bot;

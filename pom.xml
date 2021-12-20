@@ -8,10 +8,10 @@
         <version>2.3.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>net.lz1998</groupId>
-    <artifactId>spring-mirai-server</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>spring-mirai-server</name>
+    <groupId>com.kryang</groupId>
+    <artifactId>lolibot</artifactId>
+    <version>v1.0</version>
+    <name>lolibot</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -20,6 +20,18 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.27</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.4.3.4</version>
+        </dependency>
+
         <dependency>
             <groupId>net.lz1998</groupId>
             <artifactId>pbbot-spring-boot-starter</artifactId>

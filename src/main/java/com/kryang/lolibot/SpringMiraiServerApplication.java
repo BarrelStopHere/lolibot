@@ -1,4 +1,4 @@
-package net.lz1998.pbbot;
+package com.kryang.lolibot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

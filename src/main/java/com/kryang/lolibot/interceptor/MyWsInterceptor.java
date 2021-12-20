@@ -1,4 +1,4 @@
-package net.lz1998.pbbot.interceptor;
+package com.kryang.lolibot.interceptor;
 
 import lombok.SneakyThrows;
 import net.lz1998.pbbot.handler.BotSessionInterceptor;
