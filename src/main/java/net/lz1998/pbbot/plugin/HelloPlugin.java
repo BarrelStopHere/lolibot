@@ -2,6 +2,7 @@ package net.lz1998.pbbot.plugin;
 
 import net.lz1998.pbbot.bot.Bot;
 import net.lz1998.pbbot.bot.BotPlugin;
+import net.lz1998.pbbot.utils.Msg;
 import onebot.OnebotBase;
 import onebot.OnebotEvent;
 import org.jetbrains.annotations.NotNull;
@@ -20,11 +21,17 @@ public class HelloPlugin extends BotPlugin {
             OnebotBase.Message message = messageChain.get(0);
             if (message.getType().equals("text")) {
                 String text = message.getDataMap().get("text");
-                if ("hello".equals(text)) {
-                    bot.sendPrivateMsg(event.getUserId(), "hi", false);
+                if ("涩图".equals(text) || "色图".equals(text)) {
+                    Msg msg = Msg.builder()
+                            .face(1)
+                            .text("目前没有涩图。。/r/n")
+                            .text("图片发送测试：")
+                            .image("https://www.baidu.com/img/flexible/logo/pc/result@2.png");
+                    bot.sendPrivateMsg(event.getUserId(), msg, false);
                 }
             }
         }
+
         return MESSAGE_IGNORE;
     }
 
@@ -36,6 +43,15 @@ public class HelloPlugin extends BotPlugin {
         if ("hello".equals(text)) {
             bot.sendGroupMsg(groupId, "hi", false);
             return MESSAGE_BLOCK; // 当存在多个plugin时，不执行下一个plugin
+        }
+        if ("涩图".equals(text) || "色图".equals(text)) {
+            Msg msg = Msg.builder()
+                    .face(1)
+                    .text("目前没有涩图。。/r/n")
+                    .text("图片发送测试：")
+                    .image("https://www.baidu.com/img/flexible/logo/pc/result@2.png");
+            bot.sendPrivateMsg(event.getUserId(), msg, false);
+            return MESSAGE_IGNORE;
         }
         return MESSAGE_IGNORE; // 当存在多个plugin时，继续执行下一个plugin
     }
