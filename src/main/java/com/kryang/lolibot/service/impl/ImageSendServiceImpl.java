@@ -39,7 +39,7 @@ public class ImageSendServiceImpl implements ImageSendService {
             String seed = Randoms.randomInt(5);
             String url = String.format(WIFE_URL, seed);
             log.info("发送图片:{}", url);
-            return Msg.builder().at(event.getUserId()).text(String.format("no.%s wife:", seed)).image(url);
+            return Msg.builder().at(event.getUserId()).text(String.format("你的第%s位老婆:", seed)).image(url);
         }
         return null;
     }
