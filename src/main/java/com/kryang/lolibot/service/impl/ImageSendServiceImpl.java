@@ -46,9 +46,10 @@ public class ImageSendServiceImpl implements ImageSendService {
     public Msg getWife(OnebotEvent.GroupMessageEvent event) {
         String message = event.getRawMessage();
         if (message.contains("wife") || message.contains("随机老婆")) {
+            log.info("getWife被调用");
             String seed = Randoms.randomInt(5);
             String url = String.format(WIFE_URL, seed);
-            log.info("发送图片:{}", url);
+            log.info("图片url:{}", url);
             return Msg.builder().at(event.getUserId()).text(String.format("你的第%s位老婆:", seed)).image(url);
         }
         return null;
@@ -57,11 +58,13 @@ public class ImageSendServiceImpl implements ImageSendService {
     @Override
     public Msg getLoli(OnebotEvent.GroupMessageEvent event) {
         String message = event.getRawMessage();
-        if (message.contains("loli") || message.contains("来份萝莉")) {
+        if (message.contains("loli") || message.contains("萝莉")) {
+            log.info("getLoli被调用");
             String s = HttpClientUtil.httpGetRequest(LOLI_URL);
             JSONObject jsonObject = JSON.parseObject(s);
             String url = jsonObject.getJSONArray("data").getJSONObject(0).getJSONObject("urls").getString("original");
-            if (message.contains("详细信息")){
+            log.info("图片url:{}",url);
+            if (message.contains("出处")){
                 StringBuffer sb = new StringBuffer();
                 sb.append("pid:").append(jsonObject.getJSONArray("data").getJSONObject(0).getString("uid")).append("\n");
                 sb.append("url:").append(url).append("\n");
