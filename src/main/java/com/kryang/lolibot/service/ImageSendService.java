@@ -10,6 +10,8 @@ public interface ImageSendService {
 
     Msg getWife(OnebotEvent.GroupMessageEvent event);
 
+    Msg getLoli(OnebotEvent.GroupMessageEvent event);
+
     Msg saveSetu(OnebotEvent.GroupMessageEvent event);
 
 }
