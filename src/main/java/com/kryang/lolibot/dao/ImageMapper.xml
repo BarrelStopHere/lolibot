@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kryang.lolibot.dao.ImageMapper">
+    <select id="getMaxId" resultType="java.lang.Integer">
+        select max(id) as id from image
+    </select>
+</mapper>

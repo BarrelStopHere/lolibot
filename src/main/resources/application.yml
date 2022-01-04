@@ -2,8 +2,6 @@ spring:
   bot:
     plugin-list: # 配置插件列表（有序），如果插件返回0，继续执行剩余插件，如果插件返回1，终止剩余插件执行
       - com.kryang.lolibot.plugin.LogPlugin # 日志插件
-      - com.kryang.lolibot.plugin.DemoPlugin # 测试插件
-      - com.kryang.lolibot.plugin.ImagePlugin # 动态生成图片插件
       - com.kryang.lolibot.plugin.MessagePlugin # 测试插件
   datasource:
     driver-class-name: com.mysql.jdbc.Driver

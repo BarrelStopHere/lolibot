@@ -9,10 +9,11 @@ import java.util.Date;
 @Data
 public class ImageEntity implements Serializable {
     private final static long serialVersionUID = -4654565537628701302L;
-    private int id;
+    private Integer id;
     private String name;
     private String tag;
-    private Blob image;
+    private String url;
     private String group;
     private Date create;
+    private Date update;
 }
