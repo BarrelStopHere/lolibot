@@ -58,8 +58,7 @@ public class ImageSendServiceImpl implements ImageSendService {
     public Msg getLoli(OnebotEvent.GroupMessageEvent event) {
         String message = event.getRawMessage();
         if (message.contains("loli") || message.contains("来份萝莉")) {
-            Map<String, Object> headerMap = new HashMap<>();
-            String s = HttpClientUtil.doGet(LOLI_URL, headerMap, "");
+            String s = HttpClientUtil.httpGetRequest(LOLI_URL);
             JSONObject jsonObject = JSON.parseObject(s);
             String url = jsonObject.getJSONArray("data").getJSONObject(0).getJSONObject("urls").getString("original");
             if (message.contains("详细信息")){
