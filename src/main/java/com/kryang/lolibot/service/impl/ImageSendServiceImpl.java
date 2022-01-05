@@ -62,7 +62,7 @@ public class ImageSendServiceImpl implements ImageSendService {
             log.info("getLoli被调用");
             String s = HttpClientUtil.httpGetRequest(LOLI_URL);
             JSONObject jsonObject = JSON.parseObject(s);
-            String url = jsonObject.getJSONArray("data").getJSONObject(0).getJSONObject("urls").getString("original");
+            String url = jsonObject.getJSONArray("data").getJSONObject(0).getJSONObject("urls").getString("original").replace("cat","re");
             log.info("图片url:{}",url);
             if (message.contains("出处")){
                 StringBuffer sb = new StringBuffer();
